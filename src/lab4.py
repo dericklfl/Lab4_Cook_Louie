@@ -49,6 +49,7 @@ class read_pin:
             time.sleep_ms(5)
             self.output_pin.high()
             q0.put(self.adc.read(), in_ISR = True)
+            
         
         else:
             int_timer.deinit()

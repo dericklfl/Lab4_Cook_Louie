@@ -14,9 +14,11 @@ from matplotlib import pyplot
 volt_list = []
 
 
-# List of times
+## List of times - A 5ms wait is included in the interrupt, hence the 5ms interval
 time_list = [*range(1,4995,5)]
-runs = 0
+
+
+#runs = 0
 
 with serial.Serial ('COM8', 115200) as s_port:
     while True:
@@ -28,17 +30,18 @@ with serial.Serial ('COM8', 115200) as s_port:
             if(s_port.readline() == b'End\r\n'):
                 break
             
-            ## List of length 2 that stores the time and position values
+            ## Variable that stores voltage value
             data = s_port.readline()
-            runs += 1
-            print(runs,",",data)
+            
+            #runs += 1
+            #print(runs,",",data)
             
             try:
             
-                ## Time converted to a string
+                ## Voltage converted to a string
                 volt_string = str(data, 'ascii')
                 
-                ## Time converted to a float
+                ## Voltage converted to a float
                 volt_float = float(volt_string)
                 
                 volt_list.append(volt_float)
@@ -46,7 +49,7 @@ with serial.Serial ('COM8', 115200) as s_port:
             
             except:
                 pass
-        print("out of loop")
+        #print("out of loop")
         print(volt_list)
         
         pyplot.plot(time_list, volt_list)
