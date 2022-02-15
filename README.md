@@ -14,7 +14,7 @@ The calcutated RC value of this first order circuit is 0.33, equaling an expecte
 This is the step response obtained when the input of the RC circuit is driven high.
 To find the measured RC value of this circuit, the time is recorded at the point where V(t) = 0.63*Vmax = 2448mV. This gives us the time value at 1 time constant = RC.
 
-The measured value for RC is about 352ms.
+The measured value for time constant is about 352ms.
 
 ---
 ### Comparison of Expected vs Measured RC
