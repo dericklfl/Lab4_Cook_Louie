@@ -1,17 +1,21 @@
 '''! @file      serialplot.py
-                This file runs a step response on the motor through serial when a key is pressed. It then reads and parses the data and plots time versus position.
+                This file runs a step response on the RC circuit through serial when a key is pressed.
+                It then reads and parses the data and plots time versus voltage.
     @author     Michael Cook
     @author     Derick Louie
-    @date       January 31, 2022
+    @date       February 14, 2022
     @copyright  (c) 2022 by Michael Cook, Derick Louie, and released under GNU Public License v3
 '''
 
 import serial
 from matplotlib import pyplot
 
+## List of voltages from ADC
 volt_list = []
 
-time_list = [*range(1,2997,3)]
+
+# List of times
+time_list = [*range(1,4995,5)]
 runs = 0
 
 with serial.Serial ('COM8', 115200) as s_port:
@@ -27,7 +31,7 @@ with serial.Serial ('COM8', 115200) as s_port:
             ## List of length 2 that stores the time and position values
             data = s_port.readline()
             runs += 1
-            #print(runs,",",data)
+            print(runs,",",data)
             
             try:
             
