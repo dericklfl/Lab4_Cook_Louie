@@ -9,7 +9,7 @@ The calcutated RC value of this first order circuit is 0.33, equaling an expecte
 
 ### Step Response of RC Circuit
 
-![RCStepResonse](/docs/plot.png)
+![RCStepResonse](/docs/plot_1.png)
 
 This is the step response obtained when the input of the RC circuit is driven high.
 To find the measured RC value of this circuit, the time is recorded at the point where V(t) = 0.63*Vmax = 2448mV. This gives us the time value at 1 time constant = RC.
